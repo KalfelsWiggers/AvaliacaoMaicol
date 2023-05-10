@@ -17,7 +17,6 @@
         justify-items: center;
         font-family: Arial, Helvetica, sans-serif;
     }
-
     .D1{
         height: 80vh;
         width: 80%;
@@ -45,6 +44,13 @@
     }
     .separacao{
         height: 5px;
+    }
+    .pressionar{
+        border: 1px solid;
+        height: 40px;
+        width: 40px; 
+        text-align: center;
+        background-color: rgb(78, 217, 78);
     }
         
 </style>
@@ -171,7 +177,16 @@ function Pega_Tecla(e)
     console.log(tecla); // MOSTRA O CÓDIGO DA TECLA PRESSIONADA
     Tkey = "key" + tecla;
     act_tecla = document.getElementById(Tkey);
-    act_tecla.classList.add()
+    console.log(Tkey);
+    act_tecla.classList.remove("tecla");
+    act_tecla.classList.add("pressionar");
+    
+    setTimeout(pisca,100);
+        function pisca()
+        {
+            act_tecla.classList.remove("pressionar");
+            act_tecla.classList.add("tecla");
+        }
 }
 
 </script>
